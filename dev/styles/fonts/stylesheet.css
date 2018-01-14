@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'mullerlight';
+    src: url('mullerlight-webfont.eot');
+    src: url('mullerlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('mullerlight-webfont.woff2') format('woff2'),
+         url('mullerlight-webfont.woff') format('woff'),
+         url('mullerlight-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mullermedium';
+    src: url('mullermedium-webfont.eot');
+    src: url('mullermedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('mullermedium-webfont.woff2') format('woff2'),
+         url('mullermedium-webfont.woff') format('woff'),
+         url('mullermedium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mullerregular';
+    src: url('mullerregular-webfont.eot');
+    src: url('mullerregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('mullerregular-webfont.woff2') format('woff2'),
+         url('mullerregular-webfont.woff') format('woff'),
+         url('mullerregular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}

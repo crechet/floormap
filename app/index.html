@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ИНСИТИ</title>
+    <link href="./styles/main.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="veil" class="veil hidden"></div>
+
+    <div id="contact-form" class="contact-form-wrapper hidden" class="clearfix">
+        <form class="contact-form" method="">
+            <div class="cross-wrapper clearfix" id="close-contact-form">
+              <img src="./styles/images/cross.png" alt="">
+            </div>
+            <input type="text" class="contact-form-input" id="name" name="name" value="" placeholder="Ваше имя" required="required" autofocus="autofocus" />
+
+            <div class="phone-input-wrapper">
+              <label for="telephone">Номер телефона</label>
+              <input type="tel" placeholder="+7(___)___-__-__" 
+                     class="contact-form-input phone" id="telephone" name="telephone" 
+                     data-inputmask="'mask': '+7(999)999-99-99'"
+                     value="" />
+            </div>
+            <input type="submit" value="Отправить" id="submit-button" />
+        </form>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2 sidebar">
+                <header>
+                  <img src="./styles/images/logo-dummy.svg" alt="logo" >
+                </header>
+
+                <nav>
+                    <ul class="clearfix">
+                        <li class="__active"><i class="icon-network"></i><a href="#">
+                            О компании</a></li>
+                        <li><i class="icon-block"></i><a href="#">Объекты</a></li>
+                        <li><i class="icon-handshake"></i><a href="#">Коммерческие площади</a></li>
+                        <li><i class="icon-bubble"></i><a href="#">Новости</a></li>
+                        <li><i class="icon-percentage"></i><a href="#">Акции</a></li>
+                        <li><i class="icon-credit-card"></i><a href="#">Условия покупки</a></li>
+                        <li><i class="icon-mark"></i><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <footer>
+                    <a href="#" class="btn">Подобрать квартиру</a>
+                    <p class="phone">8(800)999-99-99</p>
+                    <a href="#" class="callback" id="callback">Заказать звонок</a>
+                </footer>
+            </div>
+            
+            <div class="col-sm-12 col-md-10 col-lg-10 main-content">
+                <h1>Квартиры</h1>
+                <div>
+                    <p class="description">1246 квартир с продуманными планировками —  есть студии, однокомнатные и двухкомнатные. Выбирайте свою!</p>
+
+                    <form id="flat-form">
+                        <div class="form-line clearfix">
+                            <div class="radio-group clearfix">
+                                <input type="radio" checked id="studio" name="flatType" class="flatType">
+                                <label for="studio" class="radio-label">
+                                    <span class="type">С</span>
+                                    <span class="info">Студия</span>
+                                </label>
+                                <input type="radio" id="room-1" name="flatType" class="flatType">
+                                <label for="room-1" class="radio-label">
+                                    <span class="type">1</span>
+                                    <span class="info">Комн</span>
+                                </label>
+                                <input type="radio" id="room-2" name="flatType" class="flatType">
+                                <label for="room-2" class="radio-label">
+                                    <span class="type">2</span>
+                                    <span class="info">Комн</span>
+                                </label>
+                                <input type="radio" id="room-3" name="flatType" class="flatType">
+                                <label for="room-3" class="radio-label">
+                                    <span class="type">3</span>
+                                    <span class="info">Комн</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-group-blank clearfix">
+                                <input type="radio" id="liter1" name="liter">
+                                <label for="liter1" class="radio-label-blank">
+                                    Литер 8
+                                </label>
+                                <input type="radio" checked id="liter2" name="liter">
+                                <label for="liter2" class="radio-label-blank">
+                                    Литер 9
+                                </label>
+                                <input type="radio" id="liter3" name="liter">
+                                <label for="liter3" class="radio-label-blank">
+                                    Литер 10
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-line">
+                            <div class="slider-range-title">Площадь</div>
+                            <div class="slider-range-container">
+                                <div id="slider-range" class="slider-range"></div>
+                            </div>
+
+                            <div class="input-group clearfix">
+                                <div class="input-item">
+                                    <label for="squareRangeTo" class="input-label">До</label>
+                                    <input type="text" min="0" max="300" name="squareRangeTo" id="squareRangeTo">
+                                </div>
+                                <div class="input-item">
+                                    <label for="squareRangeFrom" class="input-label">От</label>
+                                    <input type="text" min="0" max="300" name="squareRangeFrom" id="squareRangeFrom">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-line">
+                            <div class="flat-map">
+                              <div class="flat-image">
+                                <img src="./styles/images/flat.png" alt="flat">
+                              </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" id="flat-map-svg" viewBox="0 0 4724 2200">
+                                  <g id="flats">
+                                    <g id="bottom1" class="flat-container room-1">
+                                      <path id="bottom1-flat-shape" d="M842 1242.3v760h332v126h302v-886z" class="flat-shape"/>
+
+                                      <g id="bottom1-flat-content" class="flat-content">
+                                        <path id="bottom1-line" d="M1007.8 1738.8H1310" class="line" />
+                                        <text id="bottom1-text" transform="translate(1009.24 1725.163)" class="text">Смотреть</text>
+                                        <g id="bottom1-eye" class="eye">
+                                          <path d="M1199 1614.3c-6-8.5-13.6-15.5-23.2-19.6h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.4 23.4 23 40 23s31-9.6 40.2-23c.4-.3.6-.8.6-1.3s-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8.3-35-19.6 11.6-16 30.6-23.8 49.7-16.5 8.2 3.6 15 9.3 20.2 16.5-8.3 11.3-20.7 19.6-35 19.5z" />
+                                          <path d="M1177 1606.8c-4 19.3-31 19.7-35.6.5-.8-3-5.6-1.8-4.8 1.3 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.8.6-3.2-4.2-4.6-5-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="bottom2" class="flat-container room-1">
+                                      <path id="bottom2-flat-shape" d="M2099.3 1241.5v760h-332v126h-302v-886z" class="flat-shape"/>
+
+                                      <g id="bottom2-flat-content" class="flat-content">
+                                        <path id="bottom2-line" d="M1631.2 1742.3h302.2" class="line"/>
+                                        <text id="bottom2-text" transform="translate(1632.623 1728.718)" class="text">Смотреть</text>
+                                        <g id="bottom2-eye" class="eye">
+                                          <path d="M1822.4 1618c-6-8.6-13.6-15.6-23.2-19.7h-.3l-.4-.3c-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.3 23.4 23 40 23s31-9.7 40.2-23c.4-.4.6-1 .6-1.4 0-.5-.2-1-.6-1.4zm-40 20.8c-14.5 0-26.8-8.2-35-19.5 11.6-16 30.6-23.8 49.7-16.5 8.3 3.6 15 9.3 20.3 16.5-8.2 11.3-20.6 19.5-35 19.5z" />
+                                          <path d="M1800.5 1610.3c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.8-4.8 1.3 2.5 10.6 11.7 18.4 22.6 18.4 11 0 20.4-8 22.7-18.7.7-3.2-4.2-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="bottom3" class="flat-container room-1">
+                                      <path id="bottom3" d="M2734.5 1247v760h332v126h302v-886z" class="flat-shape"/>
+
+                                      <g id="bottom3-flat-content" class="flat-content">
+                                        <path id="bottom3-line" d="M2900.4 1742.3h302.2" class="line"/>
+                                        <text id="bottom3-text" transform="translate(2901.814 1728.718)" class="text">Смотреть</text>
+                                        <g id="bottom3-eye" class="eye">
+                                          <path d="M3091.6 1618c-6-8.6-13.6-15.6-23.2-19.7h-.3c0-.2 0-.2-.2-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.3 23.4 23 40 23 16.8 0 31-9.7 40.2-23 .4-.4.6-1 .6-1.4 0-.5-.2-1-.6-1.4zm-40 20.8c-14.5 0-26.8-8.2-35-19.5 11.6-16 30.6-23.8 49.7-16.5 8.2 3.6 15 9.3 20.2 16.5-8.2 11.3-20.6 19.5-35 19.5z" />
+                                          <path d="M3069.6 1610.3c-4.2 19.3-31 19.7-35.7.5-1-3-5.7-1.8-5 1.3 2.6 10.6 11.8 18.4 22.7 18.4 11 0 20.4-8 22.7-18.7.8-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="bottom4" class="flat-container room-1">
+                                      <path id="bottom4-flat-shape" d="M4001 1247v760h-332v126h-302v-886z" class="flat-shape"/>
+
+                                      <g id="bottom4-flat-content" class="flat-content">
+                                        <path id="bottom4-line" d="M3533 1742.3h302" class="line"/>
+                                        <text id="bottom4-text" transform="translate(3534.314 1728.718)" class="text">Смотреть</text>
+
+                                        <g id="bottom4-eye" class="eye">
+                                          <path d="M3724 1618c-5.8-8.6-13.5-15.6-23-19.7h-.4c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.5.4-.7 1-.7 1.5s.2 1 .6 1.4c9.2 13.3 23.3 23 40 23s30.8-9.7 40-23c.5-.4.7-1 .7-1.4 0-.5-.2-1-.6-1.4zm-40 20.8c-14.4 0-26.7-8.2-35-19.5 11.7-16 30.7-23.8 49.8-16.5 8.2 3.6 15 9.3 20.2 16.5-8.2 11.3-20.6 19.5-35 19.5z" />
+                                          <path d="M3702 1610.3c-4 19.3-31 19.7-35.6.5-.8-3-5.6-1.8-4.8 1.3 2.5 10.6 11.7 18.4 22.6 18.4 11 0 20.4-8 22.7-18.7.7-3.2-4.2-4.5-5-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="left" class="flat-container room-2">
+                                      <path id="left-flat-shape" d="M837.8 1236.3V2024h-736V448.7H120V283h343.7v165.8h22V1023H698v213.3z" class="flat-shape"/>
+
+                                      <g id="left-flat-content" class="flat-content">
+                                        <path id="left-line" d="M318.6 1437.7h302.2" class="line"/>
+                                        <text id="left-text" transform="translate(320.02 1424.073)" class="text">Смотреть</text>
+                                        <g id="left-eye" class="eye">
+                                          <path d="M509.8 1313.2c-6-8.5-13.6-15.5-23.2-19.6h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.5-.6 1-.6 1.6 0 .5.2 1 .6 1.4 9.3 13.3 23.4 23 40 23s31-9.7 40.2-23c.4-.4.6-1 .6-1.4 0-.5-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8.3-35-19.6 11.6-16 30.6-23.8 49.7-16.5 8.2 3.7 15 9.4 20.2 16.6-8.2 11.3-20.6 19.6-35 19.5z" />
+                                          <path d="M488 1305.7c-4.3 19.3-31.2 19.7-35.8.5-.8-3-5.6-1.8-4.8 1.3 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.7.7-3-4.2-4.4-4.8-1.3z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top1" class="flat-container studio">
+                                      <path id="top1-flat-shape" d="M1077 752v285H482.6V166h352v586z" class="flat-shape" fill="red"/>
+                                      <g id="top1-flat-content" class="flat-content">
+                                        <path id="top1-line" d="M512.5 673h302.3" class="line"/>
+                                        <text id="top1-text" transform="translate(513.964 659.302)" class="text">Смотреть</text>
+                                        <g id="top1-eye" class="eye">
+                                          <path d="M703.8 548.5c-6-8.5-13.6-15.5-23.2-19.6l-.3-.2s-.2 0-.3-.2c-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5 0 .4.2 1 .6 1.3 9.3 13.3 23.4 23 40 23 16.8 0 31-9.7 40.2-23 .4-.4.6-1 .6-1.4 0-.6-.3-1-.6-1.5zm-40.2 21c-14.4 0-26.7-8.3-35-19.6 11.7-16 30.7-24 49.8-16.6 8.2 3.6 15 9.3 20.2 16.5-8.2 11.2-20.6 19.4-35 19.4z" />
+                                          <path d="M681.8 541c-4.2 19.2-31 19.6-35.7.4-.7-3-5.5-1.8-4.7 1.3C643.8 553.2 653 561 664 561c11 0 20.3-8 22.6-18.7.7-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top2" class="flat-container room-1">
+                                      <path id="top2-flat-shape" class="flat-shape" d="M1481 165.5v872h-410l-1.7-275.6-234.3 1V209.5h323v-44z"/>
+
+                                      <g id="top2-flat-content" class="flat-content">
+                                        <path id="top2-line" d="M1007 673h302" class="line"/>
+                                        <text id="top2-text" transform="translate(1008.314 659.302)" class="text">
+                                          Смотреть
+                                        </text>
+                                        <g id="top2-eye" class="eye">
+                                          <path d="M1198 548.5c-5.8-8.5-13.5-15.5-23-19.6l-.4-.2s-.2 0-.3-.2c-21.8-8.4-43.6 1.4-56.4 19.8-.5.4-.7 1-.7 1.5 0 .4.2 1 .6 1.3 9.2 13.3 23.3 23 40 23s30.8-9.7 40-23c.5-.4.7-1 .7-1.4 0-.6-.2-1-.6-1.5zm-40 21c-14.4 0-26.7-8.3-35-19.6 11.7-16 30.7-24 49.8-16.6 8.2 3.6 15 9.3 20.2 16.5-8.2 11.2-20.6 19.4-35 19.4z" />
+                                          <path d="M1176 541c-4 19.2-31 19.6-35.6.4-.8-3-5.6-1.8-4.8 1.3 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.7.7-3.2-4.2-4.5-5-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top3" class="flat-container room-1">
+                                      <path id="top3-flat-shape" d="M2112 214v552h-230v272h-396V168h270v46z" class="flat-shape"/>
+
+                                      <g id="top3-flat-content" class="flat-content">
+                                        <path id="top3-line" d="M1647.7 690.6H1950" class="line"/>
+                                        <text id="top3-text" transform="translate(1649.18 676.984)" class="text st3 st4">Смотреть</text>
+                                        <g id="top3-eye" class="eye">
+                                          <path d="M1839 566c-6-8.4-13.6-15.4-23.2-19.5h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.2 23.4 23 40 23s31-9.8 40.2-23c.4-.5.6-1 .6-1.5s-.3-1-.6-1.4zm-40 21c-14.5 0-26.8-8-35-19.4 11.6-16 30.6-23.8 49.7-16.5 8.2 3.7 15 9.4 20.2 16.6-8.4 11.2-20.8 19.5-35 19.5z" />
+                                          <path d="M1817 558.6c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.7-4.8 1.4 2.5 10.5 11.7 18.3 22.6 18.3 11.2 0 20.5-8 22.8-18.7.7-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top4" class="flat-container studio">
+                                      <path id="top4-flat-shape" d="M2424 183v855h-547V762h217V90h181z" class="flat-shape"/>
+
+                                      <g id="top4-flat-content" class="flat-content">
+                                        <path id="top4-line" d="M2104.8 690.6H2407" class="line"/>
+                                        <text id="top4-text" transform="translate(2106.194 676.984)" class="text">Смотреть</text>
+                                        <g id="top4-eye" class="eye">
+                                          <path d="M2296 566c-6-8.4-13.6-15.4-23.2-19.5h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.2 23.4 23 40 23 16.8 0 31-9.8 40.2-23 .4-.5.6-1 .6-1.5s-.3-1-.6-1.4zm-40 21c-14.5 0-26.8-8-35-19.4 11.6-16 30.6-23.8 49.7-16.5 8.2 3.7 15 9.4 20.2 16.6-8.4 11.2-20.7 19.5-35 19.5z" />
+                                          <path d="M2274 558.6c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.7-4.8 1.4 2.5 10.5 11.7 18.3 22.6 18.3 11.2 0 20.5-8 22.8-18.7.7-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top5" class="flat-container studio">
+                                      <path id="top5-flat-shape" d="M2419 184v855h547V763h-217V91h-181z" class="flat-shape"/>
+
+                                      <g id="top5-flat-content" class="flat-content">
+                                        <path id="top5-line" d="M2431.5 690.6h302.2" class="line"/>
+                                        <text id="top5-text" transform="translate(2432.902 676.984)" class="text">
+                                          Смотреть
+                                        </text>
+                                        <g id="top5-eye" class="eye">
+                                          <path d="M2622.7 566c-6-8.4-13.6-15.4-23.2-19.5h-.3c0-.2-.2-.2-.3-.3-22-8.4-43.7 1.4-56.5 19.8-.4.4-.6 1-.6 1.5s0 1 .5 1.4c9.3 13.2 23.4 23 40 23 16.8 0 31-9.8 40.2-23 .4-.5.6-1 .6-1.5s-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8-35-19.4 11.6-16 30.6-23.8 49.7-16.5 8.2 3.7 15 9.4 20.2 16.6-8.3 11.2-20.6 19.5-35 19.5z" />
+                                          <path d="M2600.7 558.6c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.7-4.8 1.4 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.7.7-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top6" class="flat-container room-1">
+                                      <path id="top6-flat-shape" d="M2745 214v552h230v272h396V168h-270v46z" class="flat-shape"/>
+
+                                      <g id="top6-flat-content" class="flat-content">
+                                        <path id="top6-line" d="M2966 690.6h302.2" class="line"/>
+                                        <text id="top6-text" transform="translate(2967.435 676.984)" class="text">Смотреть</text>
+                                        <g id="top6-eye" class="eye">
+                                          <path d="M3157.2 566c-6-8.4-13.6-15.4-23.2-19.5h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.2 23.4 23 40 23 16.8 0 31-9.8 40.2-23 .4-.5.6-1 .6-1.5s-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8-35-19.4 11.6-16 30.6-23.8 49.7-16.5 8 3.7 14.8 9.4 20 16.6-8 11.2-20.5 19.5-35 19.5z" />
+                                          <path d="M3135.3 558.6c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.7-4.8 1.4 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.7.8-3.2-4-4.5-4.7-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="top7" class="flat-container room-2">
+                                      <path id="top7-flat-shape" d="M4352 173v862h-978V173h272v40h384v-40z" class="flat-shape"/>
+
+                                      <g id="top7-flat-content" class="flat-content">
+                                        <path id="top7-line" d="M3712 690.6h302.3" class="line"/>
+                                        <text id="top7-text" transform="translate(3713.458 676.984)" class="text">Смотреть</text>
+                                        <g id="top7-eye" class="eye">
+                                          <path d="M3903.2 566c-6-8.4-13.6-15.4-23.2-19.5h-.3c0-.2-.2-.2-.3-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.2 23.4 23 40 23 16.8 0 31-9.8 40.2-23 .4-.5.6-1 .6-1.5s-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8-35-19.4 11.6-16 30.6-23.8 49.7-16.5 8 3.7 14.8 9.4 20 16.6-8 11.2-20.5 19.5-35 19.5z" />
+                                          <path d="M3881.3 558.6c-4.2 19.3-31 19.7-35.7.5-.8-3-5.6-1.7-4.8 1.4 2.5 10.5 11.7 18.3 22.6 18.3 11 0 20.4-8 22.7-18.7.8-3.2-4-4.5-4.7-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+
+                                    <g id="right" class="flat-container room-2">
+                                      <path id="right-flat-shape" d="M4707 277v1736h-707v-982h340V277z" class="flat-shape"/>
+
+                                      <g id="right-flat-content" class="flat-content">
+                                        <path id="right-line" d="M4202.4 1471h302.2" class="line"/>
+                                        <text id="right-text" transform="translate(4203.815 1457.276)" class="text">Смотреть</text>
+                                        <g id="right-eye" class="eye">
+                                          <path d="M4393.6 1346.4c-6-8.5-13.6-15.5-23.2-19.6h-.3c0-.2 0-.2-.2-.3-21.8-8.4-43.6 1.4-56.4 19.8-.4.4-.6 1-.6 1.5s.2 1 .6 1.4c9.3 13.3 23.4 23 40 23s31-9.7 40.2-23c.4-.4.6-1 .6-1.4 0-.5-.2-1-.6-1.4zm-40 21c-14.5 0-26.8-8.3-35-19.6 11.6-16 30.6-23.8 49.7-16.5 8.2 3.6 15 9.3 20.2 16.5-8.2 11.3-20.6 19.6-35 19.5z" />
+                                          <path d="M4371.6 1339c-4.2 19.2-31 19.6-35.7.4-1-3-5.7-1.8-5 1.3 2.6 10.5 11.8 18.3 22.7 18.3 11 0 20.4-8 22.7-18.7.8-3.2-4-4.5-4.8-1.4z" />
+                                        </g>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="form-line __center">
+                            <div class="radio-group-blank clearfix">
+                                <input type="radio" id="porch1" class="radio" name="porch">
+                                <label for="porch1" class="radio-label-blank">
+                                    <span class="info">п. 1</span>
+                                </label>
+                                <input type="radio" checked id="porch2" class="radio" name="porch">
+                                <label for="porch2" class="radio-label-blank">
+                                    <span class="info">п. 2</span>
+                                </label>
+                                <input type="radio" id="porch3" class="radio" name="porch">
+                                <label for="porch3" class="radio-label-blank">
+                                    <span class="info">п. 3</span>
+                                </label>
+                                <input type="radio" id="porch4" class="radio" name="porch">
+                                <label for="porch4" class="radio-label-blank">
+                                    <span class="info">п. 4</span>
+                                </label>
+                                <input type="radio" id="porch5" class="radio" name="porch">
+                                <label for="porch5" class="radio-label-blank">
+                                    <span class="info">п. 5</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/inputmask.min.js"></script>
+    <script src="./js/inputmask.phone.extensions.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="./js/js.js"></script>
+  </body>
+</html>
+

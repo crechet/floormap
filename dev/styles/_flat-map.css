@@ -1,0 +1,68 @@
+/* Flat plan */
+.flat-map {
+    max-width: 85%;
+    margin: 0 auto; 
+    position: relative;
+
+    .flat-image {
+        img {
+            max-width: 100%
+        }
+    }
+    #flat-map-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        #flats {
+
+            .flat-container {
+                opacity: 0;
+
+                &.disabled-flat {
+                    pointer-events: none;
+                    opacity: 1;
+                    z-index: 9999;
+
+                    .flat-shape {
+                        stroke: none;
+                    }
+
+                    .flat-content {
+                        opacity: 0;
+                    }
+                }
+
+                .flat-shape {
+                    fill: #FFFFFF;
+                    fill-opacity: 0.6;
+                    stroke: #F3052C;
+                    stroke-width: 20;
+                    stroke-miterlimit: 10;
+                    cursor: pointer;
+                }
+
+                .flat-content {
+                    .line {
+                        fill:none;
+                        stroke:#F3052C;
+                        stroke-width:3;
+                        stroke-miterlimit:10;
+                    }
+
+                    .text {
+                        fill:#F3052C;
+                        font-size: 4.1em;
+                    }
+
+                    .eye {
+                        fill:#F3052C;
+                    }
+                }
+            }
+            .flat-container:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.form-line {
+    .slider-range-title {
+        font-size: 1.2em;
+        display: inline-block;
+    }
+
+    .slider-range-container {
+        display: inline-block;
+        vertical-align: middle;
+        width: 27%;
+        margin: 0 1%;
+    }
+
+    .slider-range {
+        max-width: 100%;
+        background: $slider-bg;
+        border: none;
+        border-radius: 0;
+        height: 4px;
+
+        .ui-slider-range {
+            background: $bordo;
+            border-radius: 0;
+        }
+
+        .ui-slider-handle {
+            position: absolute;
+            z-index: 2;
+            width: 2em;
+            height: 2em;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            border-radius: 50%;
+            border-color: $grey-dark;
+            background: $white;
+
+            &.ui-state-focus {
+                outline: none;
+                border: 2px solid $bordo;
+            }
+
+             &:after {
+               content: attr(data-attr);
+               position: absolute;
+               top: 125%;
+           } 
+        }
+
+        .ui-state-active {
+            color: $main-font;
+        }
+    }
+}

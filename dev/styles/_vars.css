@@ -1,0 +1,19 @@
+/* colors */
+$bordo: #f3052c;
+$bordo-dark: #cf0425;
+$grey: #f3f3f3;
+$grey-dark: #8c8c8c;
+$grey-active: #d1d1d1;
+$slider-bg: #ccc;
+$background-color: #fff;
+
+/* fonts colors */
+$main-font: #25353d;
+$white: #fff;
+
+/* fonts */
+$font-alternative: Arial, "Nimbus Sans L", Helvetica, sans-serif;
+$muller-light: 'mullerlight', $font-alternative;
+$muller-regular: 'mullerregular', $font-alternative;
+$muller-medium: 'mullermedium', $font-alternative;
+$pfddp-light: 'pf_dindisplay_prolight', $font-alternative;
